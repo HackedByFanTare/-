@@ -291,19 +291,7 @@ bot.on("ready", () => {
   console.log(`Bot est demarré, il y a ${client.users.size} utilisateurs, et ${client.channels.size} channels puis ${client.guilds.size} serveurs.[${client.guilds.size}, ${client.users.size}]`); 
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
-  bot.user.setGame(`d?help | ${client.guilds.size} serveurs | ${client.users.size} joueurs`, 'https://www.twitch.tv/DeathNote');
-});
-
-bot.on("guildCreate", guild => {
-  // This event triggers when the bot joins a guild.
-  console.log(`Nouveau serveur rejoins: ${guild.name} (id: ${guild.id}). Dans ce serveur il y a ${guild.memberCount} membres! [${client.guilds.size}, ${client.users.size}]`);
-  bot.user.setGame(`d?help | ${client.guilds.size} serveurs | ${client.users.size} joueurs`, 'https://www.twitch.tv/DeathNote');
-});
-
-bot.on("guildDelete", guild => {
-  // this event triggers when the bot is removed from a guild.
-  console.log(`Un Serveur à fait quitter le DeathNote: ${guild.name} (id: ${guild.id})[${client.guilds.size}, ${client.users.size}]`);
-  bot.user.setGame(`d?help | ${client.guilds.size} serveurs | ${client.users.size} joueurs`, 'https://www.twitch.tv/DeathNote');
+  bot.user.setGame(`d?help | 1765 serveurs | 20.456 joueurs`, 'https://www.twitch.tv/DeathNote');
 });
 
 
