@@ -161,7 +161,6 @@ bot.on('message', function(message) {
 
     Blague.parse(message)
 
-  Role.parse(message)
   
   Youtube.parse(message)
 
