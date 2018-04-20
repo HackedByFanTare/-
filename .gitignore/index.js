@@ -3,7 +3,6 @@ client = new Discord.Client();
 const Google = require('./commands/google')
 const Blague = require('./commands/blague')
 const Youtube = require('./commands/youtube')
-const Role = require('./commands/role')
 const Wiki = require('./commands/wiki')
 const Docs = require('./commands/docs')
 const fs = require('fs');
@@ -453,7 +452,7 @@ bot.on("guildDelete", guild => {
   
   bot.guilds.forEach(guild => { 
     var invite = bot.guilds.find("id", guild.id)
-    message.author.send(`Connecté sur :${guild.name}`);
+    message.author.send(`Connecté sur :${guild.name} | ${guild.memberCount} membres`);
   })
   }
 	else if (["invite"].includes(command)) {
