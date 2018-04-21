@@ -169,7 +169,7 @@ bot.on('message', function(message) {
 	Docs.parse(message)
 
   if(message.content.startsWith('d?game')) {
-
+message.delete();
 		let randnum_game = Math.floor(Math.random() * 2)
 
 		if (randnum_game == 0) {
@@ -305,8 +305,7 @@ bot.on("guildDelete", guild => {
 				message.channel.send("", {embed}).catch(console.error);
 			}
 	else if (["hhelp"].includes(command)) {
-
-
+message.delete();
         let sicon = bot.user.displayAvatarURL;
           var help_embed = new Discord.RichEmbed()
           
