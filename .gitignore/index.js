@@ -60,7 +60,7 @@ if (msg.content === 'd?blague'){
 }
   if (msg.content === 'd?help'){
 
-
+msg.delete();
         let sicon = bot.user.displayAvatarURL;
           var help_embed = new Discord.RichEmbed()
           
@@ -89,7 +89,7 @@ if (msg.content === 'd?blague'){
               .setFooter("Développé par DumpMan")
               msg.author.sendEmbed(help_embed).catch(console.error);
               msg.channel.send(':round_pushpin: Un message contenant les commandes du bot vous a été envoyé !')
-              message.delete(':round_pushpin: Un message contenant les commandes du bot vous a été envoyé !')
+              msg.delete(':round_pushpin: Un message contenant les commandes du bot vous a été envoyé !')
 
       }
  
@@ -323,7 +323,6 @@ message.delete();
       }
 
 	else if (["help"].includes(command)) {
-        message.delete();
           message.channel.send(":round_pushpin: Un message contenant les commandes du bot vous a été envoyé !").catch(console.error);
       }
       	else if (["ping"].includes(command)) {
@@ -345,7 +344,7 @@ message.delete();
 
  
 	else if (["shop"].includes(command)) {
-
+message.delete();
     
            let sicon = bot.user.displayAvatarURL;
           var help_embed = new Discord.RichEmbed()
