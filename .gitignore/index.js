@@ -55,6 +55,9 @@ bot.on('message', msg => {
 if (msg.content === ':ballot_box_with_check:  Redémarrage terminé !'){
   msg.delete()
 }
+if (msg.content === 'd?blague'){
+  msg.delete()
+}
   if (msg.content === 'd?help'){
 
 
