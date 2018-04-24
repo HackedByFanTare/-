@@ -1,15 +1,14 @@
 var Discord = require("discord.js");
+bot = new Discord.Client();
 client = new Discord.Client();
 const Google = require('./commands/google')
 const Blague = require('./commands/blague')
+const Youtube = require('./commands/youtube')
 const Wiki = require('./commands/wiki')
 const Docs = require('./commands/docs')
 const fs = require('fs');
 const config = require("./config.json");
 const serverembed = new Discord.RichEmbed()
-const bot = new Discord.Client({
-  autoReconnect: true
-});
 const path = require('path')
 var commands = new Object();
 var prefix = ("d?");
@@ -18,6 +17,8 @@ bot.on('ready', () => {
     console.log("");
     console.log("Connecté en tant que " + bot.user.username + " | Prefix : " + prefix + " | Nombre de Serveurs "+ bot.guilds.size +" | Nombres de channels "+ bot.channels.size +" | Utilisateur totaux "+ bot.users.size +" | Nombre d'emojis totaux "+ bot.emojis.size +'');
 });
+
+
 
 bot.on('ready',() => {
   
@@ -55,7 +56,7 @@ if (msg.content === ':ballot_box_with_check:  Redémarrage terminé !'){
   msg.delete()
 }
   if (msg.content === 'd?help'){
-                  msg.delete();
+
 
         let sicon = bot.user.displayAvatarURL;
           var help_embed = new Discord.RichEmbed()
@@ -74,7 +75,7 @@ if (msg.content === ':ballot_box_with_check:  Redémarrage terminé !'){
               .addField(":black_small_square: d?udapte","Les Dernieres MAJ du DeathNote", true)
               .addField(":black_small_square: d?shop","Cette commande montre la vente du développeur.", true)
               .addField(":black_small_square: d?say","Le Death Note répete vos phrases", true)
-              .addField(":black_small_square: d?reload","redémarre le bot", true)
+                            .addField(":black_small_square: d?reload","redémarre le bot", true)
               .addField(":black_small_square: d?uptime","Affiche les statistiques du bot totaux.", true)
               .addField(":black_small_square: d?ping","Calcule le ping entre l'envoi d'un message et sa provenance, ce qui donne une belle latence.", true)
               .addField(":black_small_square: d?invite","Affiche le lien d'invitation du DeathNote directement.", true)
@@ -88,18 +89,14 @@ if (msg.content === ':ballot_box_with_check:  Redémarrage terminé !'){
               message.delete(':round_pushpin: Un message contenant les commandes du bot vous a été envoyé !')
 
       }
-      				      if (msg.content === 'd?update'){
-                  msg.delete()
-               var embed = new Discord.RichEmbed();
-
-           .setAuthor(bot.user.username, bot.user.avatarURL)
-				  .setColor("#320242")
-					.setFooter("Demandé par "+ msg.author.username, msg.author.avatarURL)
-          .addField("Récente Mise à Jour ¬","Aucune mise à jour n'a été fait pour l'instant !");
-		    	msg.channel.send(embed).catch(console.error)
-
-            }
-
+ 
+            if (msg.content === 'd?shop'){
+        msg.delete();
+          msg.channel.send(":shopping_cart: Un message contenant le shop du développeur vous a été envoyé !")
+      }
+      if (msg.content === ':shopping_cart: Un message contenant le shop du développeur vous a été envoyé !'){
+        msg.delete().catch(console.error);
+      }
 
 });           
 
@@ -149,14 +146,15 @@ bot.on('message', function(message) {
 
     Blague.parse(message)
 
+  
+  Youtube.parse(message)
 
   Google.parse(message)
 
 	Docs.parse(message)
 
   if(message.content.startsWith('d?game')) {
-    message.delete()
-
+message.delete();
 		let randnum_game = Math.floor(Math.random() * 2)
 
 		if (randnum_game == 0) {
@@ -175,8 +173,8 @@ bot.on('message', function(message) {
 			.setFooter('Jeu du vrai ou faux')
 			message.channel.send(embed).catch(console.error)
     }
-
-  }
+    
+    }
 
 });
 
@@ -292,9 +290,7 @@ bot.on("guildDelete", guild => {
 				message.channel.send("", {embed}).catch(console.error);
 			}
 	else if (["hhelp"].includes(command)) {
-    message.delete()
-
-
+message.delete();
         let sicon = bot.user.displayAvatarURL;
           var help_embed = new Discord.RichEmbed()
           
@@ -320,14 +316,19 @@ bot.on("guildDelete", guild => {
               .addField(":black_small_square: d?hhelp","Affiche le panel d'aide directement sur le serveur", true)
               .setColor("#320242")
               .setFooter("Développé par DumpMan")
-             message.channel.sendEmbed(help_embed)
+             message.channel.sendEmbed(help_embed).catch(console.error);
       }
 
-
+	else if (["help"].includes(command)) {
+        message.delete();
+          message.channel.send(":round_pushpin: Un message contenant les commandes du bot vous a été envoyé !").catch(console.error);
+      }
       	else if (["ping"].includes(command)) {
         message.delete();
   
+
           var help_embed = new Discord.RichEmbed()
+        
 
               .setAuthor(bot.user.username, bot.user.avatarURL)	
               .addField("Pong !",`La latence est de ${Math.round(bot.ping)} ms`, true)
@@ -381,7 +382,6 @@ bot.on("guildDelete", guild => {
                message.delete(":shopping_cart: Un message contenant le shop du développeur vous a été envoyé !")
           
       }
-          
 
 	else if (["bvn"].includes(command)) {
         message.delete();
