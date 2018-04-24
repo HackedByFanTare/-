@@ -19,6 +19,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('Quand est ce que Windows ne bug pas ? \n Quand l\'ordinateur est éteint.')
 			.setFooter('Les meilleurs blagues du Death Note')
+		    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 
 		} else if(randnum == 1) {
@@ -27,6 +28,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('De quelle couleur sont tes yeux ? ;) \n #1292f4 et toi ? :smiley:')
 			.setFooter('Les meilleurs blagues du Death Note')
+					    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 
 		} else if(randnum == 2) {
@@ -35,6 +37,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('Que dit une mère à son fils geek quand le diner est servi ? \n Alt Tab !!!')
 			.setFooter('Les meilleurs blagues du Death Note')
+					    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 
 		} else if(randnum == 3) {
@@ -43,6 +46,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('De nos jours, le zip ça devient rar...')
 			.setFooter('Les meilleurs blagues du Death Note')
+					    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 
 		} else if(randnum == 4) {
@@ -51,6 +55,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('Comment un informaticien répare sa voiture quand elle est en panne ? \n Il sort de la voiture, ferme toutes les fenêtres, retourne dans la voiture, et la redémarre.')
 			.setFooter('Les meilleurs blagues du Death Note')
+					    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 
 		} else if(randnum == 5) {
@@ -59,6 +64,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('Un geek ne descend pas du métro. Il libère la RAM...')
 			.setFooter('Les meilleurs blagues du Death Note')
+					    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 
 		} else if(randnum == 6) {
@@ -67,6 +73,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('A quoi sert Internet Explorer ? \n A télécharger Google Chrome.')
 			.setFooter('Les meilleurs blagues du Death Note')
+					    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 
 		} else if(randnum == 7) {
@@ -75,6 +82,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('Un geek sait compter jusqu\'a 403 apres pour lui c\'est introuvable')
 			.setFooter('Les meilleurs blagues du Death Note')
+					    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 
 		} else if(randnum == 8) {
@@ -83,6 +91,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('Quand quelqu\'un de triste joue aux jeux vidéo pour oublier, on peut dire qu\'il se console...')
 			.setFooter('Les meilleurs blagues du Death Note')
+					    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 
 		} else if(randnum == 9) {
@@ -91,6 +100,7 @@ module.exports = class Blague extends Command {
 			.setColor("#320242")
 			.setDescription('Les filles c\'est comme les noms de domaine. \n Celles que j\'aime sont déjà prises. :sob:')
 			.setFooter('Les meilleurs blagues du Death Note')
+					    .setAuthor(bot.user.username, bot.user.avatarURL);
 			message.channel.sendEmbed(embed)
 		}
 		
