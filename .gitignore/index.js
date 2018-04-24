@@ -69,16 +69,15 @@ msg.delete();
               .setThumbnail(sicon)
               .addField("INFORMATION ¬","Un bot Discord de modération 100% français, ainsi qu'un Anti-Spam Integré !", true)
               .addField(":black_small_square: d?bvn","Souhaitez la bienvenue !", true)
-              .addField(":black_small_square: d?blague","Tire au hasard une blague parmi plusieurs blagues", true)
               .addField(":black_small_square: d?serverinfo","Affiche les Information du Serveur", true)
               .addField(":black_small_square: d?stats","Affiche les statistiques du bot totaux.", true)
               .addField(":black_small_square: d?doc","Commande qui permet d'obtenir le lien de docs de languages de programmation", true)
-              .addField(":black_small_square: d?game","Commence le jeu du vrai ou faux.", true)
+              .addField(":black_small_square: d?game","Affiche plusieurs jeux disponibles", true)
               .addField(":black_small_square: d?whois"," Affiche les informations d'un membre.", true)
               .addField(":black_small_square: d?udapte","Les Dernieres MAJ du DeathNote", true)
               .addField(":black_small_square: d?shop","Cette commande montre la vente du développeur.", true)
               .addField(":black_small_square: d?say","Le Death Note répete vos phrases", true)
-                            .addField(":black_small_square: d?reload","redémarre le bot", true)
+              .addField(":black_small_square: d?reload","redémarre le bot", true)
               .addField(":black_small_square: d?uptime","Affiche les statistiques du bot totaux.", true)
               .addField(":black_small_square: d?ping","Calcule le ping entre l'envoi d'un message et sa provenance, ce qui donne une belle latence.", true)
               .addField(":black_small_square: d?invite","Affiche le lien d'invitation du DeathNote directement.", true)
@@ -90,6 +89,22 @@ msg.delete();
               msg.author.sendEmbed(help_embed).catch(console.error);
               msg.channel.send(':round_pushpin: Un message contenant les commandes du bot vous a été envoyé !')
               msg.delete(':round_pushpin: Un message contenant les commandes du bot vous a été envoyé !')
+
+      }
+
+        if (msg.content === 'd?game'){
+msg.delete();
+          var help_embed = new Discord.RichEmbed()
+          
+          
+              .setTitle("Voici la liste des jeux disponibles :")
+              .addField("d? <pierre/feuille/ciseaux> ","Jouer à pierre feuille ciseau avec le bot.", true)
+              .addField("d? <vrai/faux> ","Le bot vous répondra par vrai ou faux.", true)
+              .addField("d?flip ","Jouer a Pile ou Face avec le BOT.", true)
+              .addField("d?blague","Affiche une blague aléatoires.", true)
+              .setColor("#320242")
+              .setFooter("Développé par DumpMan")
+              msg.channel.sendEmbed(help_embed).catch(console.error);
 
       }
  
@@ -156,7 +171,7 @@ bot.on('message', function(message) {
 
 	Docs.parse(message)
 
-  if(message.content.startsWith('d?game')) {
+  if(message.content.startsWith('d?vrai')) {
 message.delete();
 		let randnum_game = Math.floor(Math.random() * 2)
 
@@ -178,8 +193,134 @@ message.delete();
     }
     
     }
+  if(message.content.startsWith('d?faux')) {
+message.delete();
+		let randnum_game = Math.floor(Math.random() * 2)
 
+		if (randnum_game == 0) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription("Vrai :wink:")
+			.setFooter('Jeu du vrai ou faux')
+			message.channel.send(embed).catch(console.error)
+
+		} else if(randnum_game == 1) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription("Faux :wink:")
+			.setFooter('Jeu du vrai ou faux')
+			message.channel.send(embed).catch(console.error)
+    }
+    
+    }
+  if(message.content.startsWith('d?pierre')) {
+message.delete();
+		let randnum_game = Math.floor(Math.random() * 3)
+
+		if (randnum_game == 0) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription(":dagger: | Résultat: ciseau")
+			.setFooter('Victoire de '+message.author.username+'!')
+			message.channel.send(embed).catch(console.error)
+
+		} else if(randnum_game == 1) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription(":crossed_swords: | Résultat: pierre")
+			.setFooter('Egalité !')
+			message.channel.send(embed).catch(console.error)
+
+    }	 else if(randnum_game == 2) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription(":skull_crossbones: | Résultat: feuille")
+			.setFooter("Victoire du Death Note !")
+			message.channel.send(embed).catch(console.error)
+    }
+    
+    }
+  if(message.content.startsWith('d?feuille')) {
+message.delete();
+		let randnum_game = Math.floor(Math.random() * 3)
+
+		if (randnum_game == 0) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription(":dagger: | Résultat: pierre")
+			.setFooter('Victoire de '+message.author.username+'!')
+			message.channel.send(embed).catch(console.error)
+
+		} else if(randnum_game == 1) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription(":crossed_swords: | Résultat: feuille")
+			.setFooter('Egalité !')
+			message.channel.send(embed).catch(console.error)
+
+    }	 else if(randnum_game == 2) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription(":skull_crossbones: | Résultat: ciseau")
+			.setFooter("Victoire du Death Note !")
+			message.channel.send(embed).catch(console.error)
+    }
+    
+    }
+      if(message.content.startsWith('d?pierre')) {
+message.delete();
+		let randnum_game = Math.floor(Math.random() * 3)
+
+		if (randnum_game == 0) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription(":dagger: | Résultat: ciseau")
+			.setFooter('Victoire de '+message.author.username+'!')
+			message.channel.send(embed).catch(console.error)
+
+		} else if(randnum_game == 1) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription(":crossed_swords: | Résultat: pierre")
+			.setFooter('Egalité !')
+			message.channel.send(embed).catch(console.error)
+
+    }	 else if(randnum_game == 2) {
+
+			var embed = new Discord.RichEmbed()
+			.setColor("#320242")
+			.setDescription(":skull_crossbones: | Résultat: feuille")
+			.setFooter("Victoire du Death Note !")
+			message.channel.send(embed).catch(console.error)
+    }
+    
+    }
+      if(message.content.startsWith('d?flip')) {
+message.delete();
+		let randnum_game = Math.floor(Math.random() * 2)
+
+		if (randnum_game == 0) {
+
+message.channel.send(":triangular_flag_on_post: | C'est pile !")
+
+		} else if(randnum_game == 1) {
+
+message.channel.send(":triangular_flag_on_post: | C'est face !")
+    
+    }
+      }
 });
+
 
 bot.on("ready", () => {
 
@@ -302,11 +443,10 @@ message.delete();
               .setThumbnail(sicon)
               .addField("INFORMATION ¬","Un bot Discord de modération 100% français, ainsi qu'un Anti-Spam Integré !", true)
               .addField(":black_small_square: d?bvn","Souhaitez la bienvenue !", true)
-              .addField(":black_small_square: d?blague","Tire au hasard une blague parmi plusieurs blagues", true)
               .addField(":black_small_square: d?serverinfo","Affiche les Information du Serveur", true)
               .addField(":black_small_square: d?stats","Affiche les statistiques du bot totaux.", true)
               .addField(":black_small_square: d?doc","Commande qui permet d'obtenir le lien de docs de languages de programmation", true)
-              .addField(":black_small_square: d?game","Commence le jeu du vrai ou faux.", true)
+              .addField(":black_small_square: d?game","Affiche plusieurs jeux disponibles", true)
               .addField(":black_small_square: d?whois"," Affiche les informations d'un membre.", true)
               .addField(":black_small_square: d?udapte","Les Dernieres MAJ du DeathNote", true)
               .addField(":black_small_square: d?reload","Redémarre le bot", true)
