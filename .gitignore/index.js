@@ -98,7 +98,7 @@ msg.delete();
           
           
               .setTitle("Voici la liste des jeux disponibles :")
-              .addField("d? <pierre/feuille/ciseaux> ","Jouer à pierre feuille ciseau avec le bot.", true)
+              .addField("d? <pierre/feuille/ciseau> ","Jouer à pierre feuille ciseau avec le bot.", true)
               .addField("d? <vrai/faux> ","Le bot vous répondra par vrai ou faux.", true)
               .addField("d?flip ","Jouer a Pile ou Face avec le BOT.", true) 
 	      .addField("d?say","Le Death Note répete vos phrases", true)
@@ -141,10 +141,10 @@ msg.delete();
         if (msg.member.hasPermission('MANAGE_MESSAGES')) return
         if (!cache.active_warning) {
             console.info("Rôle Muté" +  " de "  + msg.author.username + " #"+ msg.author.discriminator + " (" + msg.author + ")")
-            hook.send(":anger:  **Rôle Muté** - ``" + msg.author.username + " #"+ msg.author.discriminator + "``");
-            var RoleMuté = msg.guild.roles.find("name","Muté")
+            msg.channel.send(":anger:  **Rôle Muté** - ``" + msg.author.username + " #"+ msg.author.discriminator + "``");
+            var RoleMuté = msg.guild.roles.find("name","Mute")
             cache.active_warning = msg.member.addRole(RoleMuté)
-              .catch(e  => console.error('Erreur des permissions pour donner le rôle Muté.') + console.error(e))
+              .catch(e  => console.error('Erreur des permissions pour donner le rôle Mute.') + console.error(e))
               .then((msg) => {
                   setTimeout(() => {
                       cache.active_warning = false
@@ -275,7 +275,7 @@ message.delete();
     }
     
     }
-      if(message.content.startsWith('d?pierre')) {
+      if(message.content.startsWith('d?ciseau')) {
 message.delete();
 		let randnum_game = Math.floor(Math.random() * 3)
 
@@ -283,7 +283,7 @@ message.delete();
 
 			var embed = new Discord.RichEmbed()
 			.setColor("#320242")
-			.setDescription(":dagger: | Résultat: ciseau")
+			.setDescription(":dagger: | Résultat: feuille")
 			.setFooter('Victoire de '+message.author.username+'!')
 			message.channel.send(embed).catch(console.error)
 
@@ -291,7 +291,7 @@ message.delete();
 
 			var embed = new Discord.RichEmbed()
 			.setColor("#320242")
-			.setDescription(":crossed_swords: | Résultat: pierre")
+			.setDescription(":crossed_swords: | Résultat: ciseau")
 			.setFooter('Egalité !')
 			message.channel.send(embed).catch(console.error)
 
@@ -299,7 +299,7 @@ message.delete();
 
 			var embed = new Discord.RichEmbed()
 			.setColor("#320242")
-			.setDescription(":skull_crossbones: | Résultat: feuille")
+			.setDescription(":skull_crossbones: | Résultat: pierre")
 			.setFooter("Victoire du Death Note !")
 			message.channel.send(embed).catch(console.error)
     }
