@@ -76,7 +76,7 @@ msg.delete();
               .addField(":black_small_square: d?whois"," Affiche les informations d'un membre.", true)
               .addField(":black_small_square: d?udapte","Les Dernieres MAJ du DeathNote", true)
               .addField(":black_small_square: d?shop","Cette commande montre la vente du développeur.", true)
-              .addField(":black_small_square: d?say","Le Death Note répete vos phrases", true)
+        
               .addField(":black_small_square: d?reload","redémarre le bot", true)
               .addField(":black_small_square: d?uptime","Affiche les statistiques du bot totaux.", true)
               .addField(":black_small_square: d?ping","Calcule le ping entre l'envoi d'un message et sa provenance, ce qui donne une belle latence.", true)
@@ -100,7 +100,8 @@ msg.delete();
               .setTitle("Voici la liste des jeux disponibles :")
               .addField("d? <pierre/feuille/ciseaux> ","Jouer à pierre feuille ciseau avec le bot.", true)
               .addField("d? <vrai/faux> ","Le bot vous répondra par vrai ou faux.", true)
-              .addField("d?flip ","Jouer a Pile ou Face avec le BOT.", true)
+              .addField("d?flip ","Jouer a Pile ou Face avec le BOT.", true) 
+	      .addField("d?say","Le Death Note répete vos phrases", true)
               .addField("d?blague","Affiche une blague aléatoires.", true)
               .setColor("#320242")
               .setFooter("Développé par DumpMan")
@@ -452,7 +453,7 @@ message.delete();
               .addField(":black_small_square: d?reload","Redémarre le bot", true)
               .addField(":black_small_square: d?shop","Cette commande montre la vente du développeur.", true)
               .addField(":black_small_square: d?ping","Calcule le ping entre l'envoi d'un message et sa provenance, ce qui donne une belle latence.", true)
-              .addField(":black_small_square: d?say","Le Death Note répete vos phrases", true)
+
               .addField(":black_small_square: d?invite","Affiche le lien d'invitation du DeathNote directement.", true)
               .addField(":black_small_square: d?quit","Le Death Note quitte le serveur.", true)
               .addField(":black_small_square: d?help","Affiche le panel d'aide en message privé", true)
