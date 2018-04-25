@@ -574,7 +574,7 @@ message.delete();
   
   bot.guilds.forEach(guild => { 
     var invite = bot.guilds.find("id", guild.id)
-    message.author.send(`Connecté sur :${guild.name} | ${guild.memberCount} membres`).catch(console.error);
+    message.channel.send(`Connecté sur :${guild.name} | ${guild.memberCount} membres`).catch(console.error);
   }).catch(console.error)
   }
 
